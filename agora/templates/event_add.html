@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGORA - Home</title>
+    <style>
+
+        body {
+
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 500px;
+            text-align: center;
+            width: 500px;
+        }
+
+        img {
+            width: 250px; /* Responsive image */
+
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: Arial;
+            padding-top: 20px;
+        }
+
+        /* Form styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input, textarea {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;/* Remove default outline */
+        }
+
+        textarea {
+            resize: none; /* Disable textarea resize */
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #222;
+        }
+
+        /* Link styles */
+        a {
+            text-align: center;
+            color: #333;
+            font-family: Arial;
+            font-weight: bold;
+            transition: color 0.2s ease;
+
+        }
+
+        a:hover {
+            color: #9d5637;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="static/AGORA.png" alt="logo"><br><br>
+        <a href="{{ url_for('upcoming_events') }}">Upcoming Events</a>
+        <h1>Add Event</h1>
+        <form class="form-info" method="POST">
+            <input type="text" id="title" name="title" placeholder="Name Of Event" required><br><br>
+            <textarea name="dscript" id="dscript" cols="30" rows="10" required placeholder="Description"></textarea><br><br>
+            <input type="text" id="location" name="location" placeholder="Location" required><br><br>
+            <input type="date" id="date" name="date" required placeholder="Date Of Event"><br><br>
+            <input type="url" id="ticket_link" name="ticket_link" placeholder="Enter Ticket Purchase Link" required><br><br>
+            <button type="submit">Add Event</button>
+        </form>
+    </div>
+</body>
+</html>
